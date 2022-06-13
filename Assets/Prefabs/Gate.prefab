@@ -553,7 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 2049026354820680352}
-  goalCollider: {fileID: 0}
 --- !u!1 &2049026356582006751
 GameObject:
   m_ObjectHideFlags: 0
