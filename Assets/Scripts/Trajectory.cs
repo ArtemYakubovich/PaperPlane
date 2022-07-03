@@ -24,6 +24,7 @@ public class Trajectory : MonoBehaviour
         for (int i = 0; i < _segments.Length; i++)
         {
             _segments[i].position = Bezier.GetPoint(_p0.position, _p1.position, _p2.position, (float)i / (_countSegments - 1));
+            _segments[i].rotation = Quaternion.LookRotation(Bezier.GetFirstDerivative(_p0.position, _p1.position, _p2.position, (float)i / (_countSegments - 1)));
         }
     }
 }
