@@ -17,7 +17,7 @@ public static class Bezier
         t = Mathf.Clamp01(t);
         float oneMinusT = 1f - t;
 
-        return 3f * oneMinusT * oneMinusT * (p1 - p0) +
-               3f * t * t * (p2 - p1);
+        return 2f * oneMinusT * oneMinusT * (p1 - p0) +
+               2f * t * t * (p2 - p1);
     }
 }

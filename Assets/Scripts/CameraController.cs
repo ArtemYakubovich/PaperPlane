@@ -8,10 +8,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float position;
     [SerializeField] private bool Move = false;
     [SerializeField] private int _countPos = 0;
+    [SerializeField] private GameUI _gameUI;
 
-    private void Awake()
+    private void Start()
     {
-        
+        _gameUI = FindObjectOfType<GameUI>();
     }
 
     private void Update()
@@ -29,6 +30,7 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(_cameraPos[_countPos - 1].position, _cameraPos[_countPos].position, position);
             if (position == 1)
             {
+                _gameUI.ShowPartLevelUI(_countPos);
                 Move = false;
                 position = 0;
             }
